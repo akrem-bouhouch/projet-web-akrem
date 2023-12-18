@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+
+
+    <script>
+        function validateForm() {
+            var nom = document.getElementById("nom").value;
+            var prenom = document.getElementById("prenom").value;
+            var mail = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            if (nom === "" || prenom === "" || mail === "" || message === "") {
+                alert("Please fill in all fields with valid data.");
+                return false;
+            }
+
+            if (mail.indexOf("@") < 0 || mail.indexOf(".") < 0 || mail.indexOf("@") > mail.lastIndexOf(".")) {
+                alert("Invalid email address.");
+                return false;
+            }
+        }
+    </script>
+   
+
+
+</head>
+<body> 
+    <header>
+        <a href="#" class="logo">Akrem</a>
+        <nav class="navigation">
+            <a href="#services">Experiences</a>
+            <a href="#projects">Academic courses</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="main">
+        <div>
+            <h2>Hello, I'm Akrem<br><span>Engineering Student</span></h2>
+            <h3>Welcome</h3>
+            <a href="#projects" class="main-btn">View my work</a>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="cards" id="services">
+        <h2 class="title">Experiences</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-truck-pickup"></i>
+                </div>
+                <div class="info">
+                    <h3>Initial Stage</h3>
+                    <p>COFICAB - Tunisia 2019 - 2020<br>Maintenance equipment service.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-bus"></i>
+                </div>
+                <div class="info">
+                    <h3>Improvement Stage</h3>
+                    <p>SNT - Tunisia 2020 - 2021<br>Subway maintenance service.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <div class="info">
+                    <h3>PFE Project</h3>
+                    <p>ENNAKL - Charguia 2022 - 2023<br>Maintenance of heavy trucks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="projects" id="projects">
+        <h2 class="title">Academic courses</h2>
+        <div class="content">
+            <div class="project-card">
+                <div class="project-image">
+                     <img src="photo/ibnou.png" />
+                </div>
+                <div class="project-info">
+                    <p class="project-category">Lycee Ibn Abi Dhief - Manouba </p>
+                    <strong class="project-title">
+                        <span>BAC 2018/2019</span>
+                        <a href="#" class="more-details">More details</a>
+                    </strong>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                     <img src="photo/kef.jpg" />
+                </div>
+                <div class="project-info">
+                    <p class="project-category">institut superieur des etudes technologiques du kef</p>
+                    <strong class="project-title">
+                        <span>2019/2023</span>
+                        <a href="#" class="more-details">More details</a>
+                    </strong>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                     <img src="photo/esprit.jpeg" />
+                </div>
+                <div class="project-info">
+                    <p class="project-category">ESPRIT</p>
+                    <strong class="project-title">
+                        <span>2023/2024</span>
+                        <a href="#" class="more-details">More details</a>
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards contact" id="contact">
+        <h2 class="title">Let's work together</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="info">
+                    <h3>Phone </h3>
+                    <p>+216 23 086 871</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info">
+                    <h3>Email</h3>
+                    <p>akrem@bouhouch.tn</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+
+    <section id="contact" class="contact">
+        <h2 class="contact__heading title">Contact Me</h2>
+        <div class="contact__wrapper wrapper--large">
+            <div class="contact__visual">
+                <img src="photo/contact-visual.png">
+            </div>
+            
+            <form class="contact__form" onsubmit="return validateForm()">
+                <input id="nom" class="contact__form-el contact__form-el--name" type="text" placeholder="Your Name" spellcheck="false">
+                <input id="prenom" class="contact__form-el contact__form-el--email" type="text" placeholder="Your prenom" spellcheck="false">
+                <input id="email" class="contact__form-el contact__form-el--email" type="email" placeholder="Your Email" spellcheck="false">
+                <textarea id="message" class="contact__form-el contact__form-el--message" placeholder="Your Message"></textarea>
+                <input class="contact__form-el contact__form-el--submit" type="submit" value="Send">
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer-title">Copyrights @ <span> Akrem Bouhouch</span></p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
